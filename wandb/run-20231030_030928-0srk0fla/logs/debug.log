@@ -1,0 +1,28 @@
+2023-10-30 03:09:28,721 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Configure stats pid to 540862
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Loading settings from /users/kabrasan/.config/wandb/settings
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Loading settings from /users/kabrasan/multimodalxmc/wandb/settings
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'src/main.py', 'program_abspath': '/users/kabrasan/multimodalxmc/src/main.py', 'program': 'src/main.py'}
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Applying login settings: {'anonymous': 'allow', 'api_key': '***REDACTED***'}
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_init.py:_log_setup():528] Logging user logs to /users/kabrasan/multimodalxmc/wandb/run-20231030_030928-0srk0fla/logs/debug.log
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_init.py:_log_setup():529] Logging internal logs to /users/kabrasan/multimodalxmc/wandb/run-20231030_030928-0srk0fla/logs/debug-internal.log
+2023-10-30 03:09:28,722 INFO    MainThread:540862 [wandb_init.py:init():568] calling init triggers
+2023-10-30 03:09:28,723 INFO    MainThread:540862 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'root_path': '/scratch/project_2001083/sanchit', 'cluster': 'mahti', 'cuda_device_id': 0, 'device': device(type='cuda'), 'use_multi_gpu': False, 'seed': 6088, 'dataset': 'mmamazontitles300k', 'num_labels': 303296, 'num_workers': 10, 'batch_size': 64, 'test_batch_size': 64, 'text_input_length': 128, 'max_object_fature_number': 30, 'use_meta': True, 'model_type': 'text', 'encoder_model': '/scratch/project_2001083/sanchit/models/crawl-300d-2M-subword.bin', 'encoder_size': 768, 'encoder_dropout': 0.4, 'hidden_dim': 500, 'visual_embed_shape': (5, 1024), 'use_label_image': False, 'use_label_text': False, 'feature_layers': 1, 'lr': 0.0001, 'epochs': 70, 'valid': False, 'swa': True, 'swa_warmup': 4, 'swa_step': 3000, 'group_y_group': 0, 'group_y_candidate_num': 2000, 'group_y_candidate_topk': 75, 'eval_step': 2000, 'update_count': 1, 'eval_model': True, 'use_wandb': 'True', 'run_name': 'MMA300K_T_3'}
+2023-10-30 03:09:28,723 INFO    MainThread:540862 [wandb_init.py:init():618] starting backend
+2023-10-30 03:09:28,723 INFO    MainThread:540862 [wandb_init.py:init():622] setting up manager
+2023-10-30 03:09:28,724 INFO    MainThread:540862 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-10-30 03:09:28,759 INFO    MainThread:540862 [wandb_init.py:init():628] backend started and connected
+2023-10-30 03:09:28,763 INFO    MainThread:540862 [wandb_init.py:init():720] updated telemetry
+2023-10-30 03:09:28,763 INFO    MainThread:540862 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-10-30 03:09:29,276 INFO    MainThread:540862 [wandb_run.py:_on_init():2220] communicating current version
+2023-10-30 03:09:29,335 INFO    MainThread:540862 [wandb_run.py:_on_init():2229] got version response 
+2023-10-30 03:09:29,335 INFO    MainThread:540862 [wandb_init.py:init():804] starting run threads in backend
+2023-10-30 03:09:30,696 INFO    MainThread:540862 [wandb_run.py:_console_start():2199] atexit reg
+2023-10-30 03:09:30,696 INFO    MainThread:540862 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-10-30 03:09:30,696 INFO    MainThread:540862 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-10-30 03:09:30,696 INFO    MainThread:540862 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-10-30 03:09:30,697 INFO    MainThread:540862 [wandb_init.py:init():845] run started, returning control to user process
+2023-10-30 03:21:06,069 WARNING MsgRouterThr:540862 [router.py:message_loop():77] message_loop has been closed

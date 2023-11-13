@@ -1,0 +1,32 @@
+Running model for the Configuration: {'root_path': '/scratch/project_2001083/sanchit', 'cluster': 'mahti', 'cuda_device_id': 0, 'device': device(type='cuda'), 'use_multi_gpu': False, 'seed': 6088, 'dataset': 'mmamazontitles300k', 'num_labels': 303296, 'num_workers': 10, 'batch_size': 64, 'test_batch_size': 64, 'text_input_length': 128, 'max_object_fature_number': 30, 'use_meta': True, 'model_type': 'text', 'encoder_model': '/scratch/project_2001083/sanchit/models/crawl-300d-2M-subword.bin', 'encoder_size': 768, 'encoder_dropout': 0.4, 'hidden_dim': 500, 'visual_embed_shape': (5, 1024), 'use_label_image': False, 'use_label_text': False, 'feature_layers': 1, 'lr': 0.0001, 'epochs': 70, 'valid': False, 'swa': True, 'swa_warmup': 4, 'swa_step': 3000, 'group_y_group': 0, 'group_y_candidate_num': 2000, 'group_y_candidate_topk': 75, 'eval_step': 2000, 'update_count': 1, 'eval_model': True, 'use_wandb': 'True', 'run_name': 'MMA300K_T_3'}
+load mmamazontitles300k dataset...
+cluster path: /scratch/project_2001083/nasib/XMC/multimodalxmc/data/MMAmazonTitles-300K/label_group0.npy
+Successfully loaded data handler
+creating model.....
+swa True 4 3000 {}
+update_count 1
+<config.ConfigMultimodal object at 0x7ffef420b5e0>
+Warning : `load_model` does not return WordVectorModel or SupervisedModel any more, but a `FastText` object which is very similar.
+hidden dim: 500
+label group numbers: 4096
+Training Model...
+Traceback (most recent call last):
+  File "src/main.py", line 191, in <module>
+    train(model, data_handler)
+  File "src/main.py", line 43, in train
+    train_d, test_d = data_handler.getDatasets()
+  File "/users/kabrasan/multimodalxmc/src/dataset.py", line 134, in getDatasets
+    train_dset = MMDataset(self.cfg,self.path,'train',self.train_text_dict,self.train_label_dict,
+  File "/users/kabrasan/multimodalxmc/src/dataset.py", line 182, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(cfg.encoder_model)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/transformers/tokenization_auto.py", line 195, in from_pretrained
+    config = AutoConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/transformers/configuration_auto.py", line 196, in from_pretrained
+    config_dict, _ = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/transformers/configuration_utils.py", line 244, in get_config_dict
+    config_dict = cls._dict_from_json_file(resolved_config_file)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/transformers/configuration_utils.py", line 326, in _dict_from_json_file
+    text = reader.read()
+  File "/CSC_CONTAINER/miniconda/envs/env1/lib/python3.8/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xba in position 0: invalid start byte

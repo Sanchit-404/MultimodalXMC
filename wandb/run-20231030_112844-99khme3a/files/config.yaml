@@ -1,0 +1,154 @@
+wandb_version: 1
+
+root_path:
+  desc: null
+  value: /scratch/project_2001083/sanchit
+cluster:
+  desc: null
+  value: mahti
+cuda_device_id:
+  desc: null
+  value: 0
+device:
+  desc: null
+  value: cuda
+use_multi_gpu:
+  desc: null
+  value: false
+seed:
+  desc: null
+  value: 6088
+dataset:
+  desc: null
+  value: mmamazontitles300k
+num_labels:
+  desc: null
+  value: 303296
+num_workers:
+  desc: null
+  value: 10
+batch_size:
+  desc: null
+  value: 64
+test_batch_size:
+  desc: null
+  value: 64
+text_input_length:
+  desc: null
+  value: 128
+max_object_fature_number:
+  desc: null
+  value: 30
+use_meta:
+  desc: null
+  value: true
+model_type:
+  desc: null
+  value: text
+encoder_model:
+  desc: null
+  value: /scratch/project_2001083/sanchit/models/crawl-300d-2M-subword.bin
+encoder_size:
+  desc: null
+  value: 768
+encoder_dropout:
+  desc: null
+  value: 0.4
+hidden_dim:
+  desc: null
+  value: 500
+visual_embed_shape:
+  desc: null
+  value:
+  - 5
+  - 1024
+use_label_image:
+  desc: null
+  value: false
+use_label_text:
+  desc: null
+  value: false
+feature_layers:
+  desc: null
+  value: 1
+lr:
+  desc: null
+  value: 0.0001
+epochs:
+  desc: null
+  value: 70
+valid:
+  desc: null
+  value: false
+swa:
+  desc: null
+  value: true
+swa_warmup:
+  desc: null
+  value: 4
+swa_step:
+  desc: null
+  value: 3000
+group_y_group:
+  desc: null
+  value: 0
+group_y_candidate_num:
+  desc: null
+  value: 2000
+group_y_candidate_topk:
+  desc: null
+  value: 75
+eval_step:
+  desc: null
+  value: 2000
+update_count:
+  desc: null
+  value: 1
+eval_model:
+  desc: null
+  value: true
+use_wandb:
+  desc: null
+  value: 'True'
+run_name:
+  desc: null
+  value: MMA300K_T_3
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.8
+    cli_version: 0.15.12
+    framework: huggingface
+    huggingface_version: 2.11.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1698658124.363355
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      2:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.8.8
+      5: 0.15.12
+      6: 2.11.0
+      8:
+      - 5
+      13: linux-x86_64

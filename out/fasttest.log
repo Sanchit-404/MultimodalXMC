@@ -1,0 +1,73 @@
+RUNNING ON:
+
+Mon Nov 13 06:34:48 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.125.06   Driver Version: 525.125.06   CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A100-SXM...  On   | 00000000:03:00.0 Off |                    0 |
+| N/A   36C    P0    54W / 400W |      0MiB / 40960MiB |      0%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+
+
+
+0it [00:00, ?it/s]108695it [00:00, 1086914.76it/s]175928it [00:00, 917233.58it/s] 338477it [00:00, 1055158.60it/s]514669it [00:00, 1199505.58it/s]586781it [00:00, 1343455.48it/s]
+0it [00:00, ?it/s]73415it [00:00, 733998.45it/s]207347it [00:00, 849130.26it/s]260536it [00:00, 1139576.43it/s]
+0it [00:00, ?it/s]24259it [00:00, 242587.92it/s]83947it [00:00, 295144.39it/s]135538it [00:00, 338613.51it/s]205464it [00:00, 400596.05it/s]286561it [00:00, 472294.06it/s]348453it [00:00, 508428.57it/s]405162it [00:00, 501089.15it/s]459401it [00:00, 502779.14it/s]512571it [00:00, 490971.07it/s]563754it [00:01, 441834.22it/s]586781it [00:01, 517435.37it/s]
+0it [00:00, ?it/s]41592it [00:00, 415919.41it/s]108161it [00:00, 468673.77it/s]170514it [00:00, 506400.32it/s]222902it [00:00, 511520.29it/s]260536it [00:00, 522403.95it/s]
+Warning : `load_model` does not return WordVectorModel or SupervisedModel any more, but a `FastText` object which is very similar.
+Warning : `load_model` does not return WordVectorModel or SupervisedModel any more, but a `FastText` object which is very similar.
+  0%|          | 0/4585 [00:00<?, ?it/s]train-0:   0%|          | 0/4585 [00:00<?, ?it/s]amazontitles300k_t0
+Log file name:  log_Amazon670
+Running model for the Configuration: Namespace(batch=128, bert='bert-base', dataset='amazontitles300k', epoch=50, eval_model=False, eval_step=1000, group_y_candidate_num=2000, group_y_candidate_topk=75, group_y_group=0, hidden_dim=400, lr=0.0001, max_len=128, run_name='Amazon670', seed=6088, swa=True, swa_step=3000, swa_warmup=4, update_count=1, use_wandb=False, valid=False)
+load amazontitles300k dataset...
+303296
+303296
+label map 303296
+load amazontitles300k dataset with 586781 train 260536 test with 303296 labels done
+swa True 4 3000 {}
+update_count 1
+load fasttext
+hidden dim: 400
+label group numbers: 4096
+load fasttext tokenizer
+Traceback (most recent call last):
+  File "src/main.py", line 231, in <module>
+    train(model, df, label_map)
+  File "src/main.py", line 81, in train
+    train_loss = model.one_epoch(epoch, trainloader, optimizer, mode='train',
+  File "/users/kabrasan/multimodalxmc/src/model.py", line 225, in one_epoch
+    for step, data in enumerate(dataloader):
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/users/kabrasan/multimodalxmc/src/dataset.py", line 111, in __getitem__
+    input_ids = self.tokenize(
+TypeError: '_FastText' object is not callable
+
+train-0:   0%|          | 0/4585 [00:03<?, ?it/s]

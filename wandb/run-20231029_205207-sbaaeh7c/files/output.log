@@ -1,0 +1,39 @@
+Running model for the Configuration: {'root_path': '/scratch/project_2001083/sanchit', 'cluster': 'mahti', 'cuda_device_id': 0, 'device': device(type='cuda'), 'use_multi_gpu': False, 'seed': 6088, 'dataset': 'mmamazontitles300k', 'num_labels': 303296, 'num_workers': 10, 'batch_size': 64, 'test_batch_size': 64, 'text_input_length': 128, 'max_object_fature_number': 30, 'use_meta': True, 'model_type': 'text', 'encoder_model': '/scratch/project_2001083/sanchit/models/crawl-300d-2M-subword.bin', 'encoder_size': 768, 'encoder_dropout': 0.4, 'hidden_dim': 500, 'visual_embed_shape': (5, 1024), 'use_label_image': False, 'use_label_text': False, 'feature_layers': 1, 'lr': 0.0001, 'epochs': 70, 'valid': False, 'swa': True, 'swa_warmup': 4, 'swa_step': 3000, 'group_y_group': 0, 'group_y_candidate_num': 2000, 'group_y_candidate_topk': 75, 'eval_step': 2000, 'update_count': 1, 'eval_model': True, 'use_wandb': 'True', 'run_name': 'MMA300K_T_3'}
+load mmamazontitles300k dataset...
+cluster path: /scratch/project_2001083/nasib/XMC/multimodalxmc/data/MMAmazonTitles-300K/label_group0.npy
+Successfully loaded data handler
+creating model.....
+swa True 4 3000 {}
+update_count 1
+<config.ConfigMultimodal object at 0x7ffef420b5e0>
+Warning : `load_model` does not return WordVectorModel or SupervisedModel any more, but a `FastText` object which is very similar.
+hidden dim: 500
+label group numbers: 4096
+Training Model...
+Successfully crated datasets
+train-0:   0%|          | 0/1176 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "src/main.py", line 191, in <module>
+    train(model, data_handler)
+  File "src/main.py", line 67, in train
+    train_loss = model.one_epoch(epoch, trainloader, optimizer, mode='train',eval_loader=validloader,eval_step=args.eval_step, log=LOG)
+  File "/users/kabrasan/multimodalxmc/src/model.py", line 306, in one_epoch
+    for step, data in enumerate(dataloader):
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/scratch/project_2001083/sanchit/xc/myenv/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/users/kabrasan/multimodalxmc/src/dataset.py", line 240, in __getitem__
+    tokens["input_ids"] = self.text_dict[uid].lower()
+TypeError: list indices must be integers or slices, not str
